@@ -1,0 +1,28 @@
+loader.entrypoint = "file:{{ gramine.libos }}"
+libos.entrypoint = "/usr/lib/jvm/java-17-openjdk-amd64/bin/java"
+loader.log_level = "error"
+loader.env.LD_LIBRARY_PATH = "/lib:/lib/x86_64-linux-gnu:/usr/lib:/usr/lib/x86_64-linux-gnu"
+loader.env.CLASSPATH = "/app"
+loader.env.max_count = "60"
+fs.mounts = [
+  { uri = "file:{{ gramine.runtimedir() }}", path = "/lib" },
+  { uri = "file:/lib/x86_64-linux-gnu", path = "/lib/x86_64-linux-gnu" },
+  { uri = "file:/usr", path = "/usr" },
+  { uri = "file:/app", path = "/app" },
+]
+sgx.enclave_size = "16G"
+sgx.max_threads = 64
+sgx.edmm_enable = {{ 'true' if env.get('EDMM', '0') == '1' else 'false' }}
+sgx.use_exinfo = true
+sgx.trusted_files = [
+  "file:{{ gramine.libos }}",
+  "file:/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+  "file:{{ gramine.runtimedir() }}/",
+  "file:/lib/x86_64-linux-gnu/",
+  "file:/usr/lib/x86_64-linux-gnu/",
+  "file:/usr/lib/jvm/java-17-openjdk-amd64/lib/",
+  "file:/usr/lib/jvm/java-17-openjdk-amd64/conf/security/java.security",
+  "file:/app/App.class",
+  "file:/app/GlobalErrorHandler.class",
+]
+loader.argv = ["/usr/lib/jvm/java-17-openjdk-amd64/bin/java","-Xmx8m","App"]
