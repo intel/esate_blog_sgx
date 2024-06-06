@@ -1,10 +1,8 @@
 ## Enhancing Security at the Edge with Intel® SGX
 
-Intel® SGX Overview Blog Post - coming soon
+[Intel® SGX Overview and Gramine Enabling Blog Post](https://community.intel.com/t5/Blogs/Products-and-Solutions/Security/Enhancing-Security-at-the-Edge-Intel-Software-Guard-Extensions/post/1563391)
 
-Intel® SGX Compatibility Check Blog Post - coming soon
-
-Intel® SGX Reference Sample Blog Post - coming soon
+[Intel® SGX Compatibility Check Blog Post](https://community.intel.com/t5/Blogs/Products-and-Solutions/Security/Enhancing-Security-at-the-Edge-Intel-Software-Guard-Extensions/post/1567552)
 
 ## Disclaimers
 
