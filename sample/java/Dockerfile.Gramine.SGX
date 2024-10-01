@@ -15,7 +15,7 @@ COPY GlobalErrorHandler.java .
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get -y install --no-install-recommends openjdk-17-jdk=17.0.11+9-1~22.04.1 && \
+    apt-get -y install --no-install-recommends openjdk-17-jdk=17.0.12+7-1ubuntu2~22.04 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     javac -g:none -Xlint:deprecation -Werror App.java && \
@@ -36,14 +36,14 @@ COPY java.manifest.template .
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get -y install curl=7.81.0-1ubuntu1.16 ca-certificates=20230311ubuntu0.22.04.1 \
+    apt-get -y install curl=7.81.0-1ubuntu1.18 ca-certificates=20240203~22.04.1 \
     git=1:2.34.1-1ubuntu1.11 lsb-core=11.1.0ubuntu4 make=4.3-4.1build1 --no-install-recommends && \
     curl -fsSLo /usr/share/keyrings/gramine-keyring.gpg https://packages.gramineproject.io/gramine-keyring.gpg && \
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gramine-keyring.gpg] https://packages.gramineproject.io/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/gramine.list && \
     curl -fsSLo /usr/share/keyrings/intel-sgx-deb.asc https://download.01.org/intel-sgx/sgx_repo/ubuntu/intel-sgx-deb.key && \
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-sgx-deb.asc] https://download.01.org/intel-sgx/sgx_repo/ubuntu $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/intel-sgx.list && \
     apt-get -y update && \
-    apt-get -y install --no-install-recommends gramine=1.7 openjdk-17-jre=17.0.11+9-1~22.04.1 && \
+    apt-get -y install --no-install-recommends gramine=1.7 openjdk-17-jre=17.0.12+7-1ubuntu2~22.04 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -61,14 +61,14 @@ ENV CLASSPATH "/app"
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get -y install curl=7.81.0-1ubuntu1.16 ca-certificates=20230311ubuntu0.22.04.1 \
+    apt-get -y install curl=7.81.0-1ubuntu1.18 ca-certificates=20240203~22.04.1 \
     git=1:2.34.1-1ubuntu1.11 lsb-core=11.1.0ubuntu4 make=4.3-4.1build1 --no-install-recommends && \
     curl -fsSLo /usr/share/keyrings/gramine-keyring.gpg https://packages.gramineproject.io/gramine-keyring.gpg && \
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gramine-keyring.gpg] https://packages.gramineproject.io/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/gramine.list && \
     curl -fsSLo /usr/share/keyrings/intel-sgx-deb.asc https://download.01.org/intel-sgx/sgx_repo/ubuntu/intel-sgx-deb.key && \
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-sgx-deb.asc] https://download.01.org/intel-sgx/sgx_repo/ubuntu $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/intel-sgx.list && \
     apt-get -y update && \
-    apt-get -y install --no-install-recommends gramine=1.7 openjdk-17-jre=17.0.11+9-1~22.04.1 && \
+    apt-get -y install --no-install-recommends gramine=1.7 openjdk-17-jre=17.0.12+7-1ubuntu2~22.04 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
