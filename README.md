@@ -1,3 +1,10 @@
+# PROJECT NOT UNDER ACTIVE MANAGEMENT
+
+This project will no longer be maintained by Intel.  
+This project has been identified as having known security escapes.  
+Intel has ceased development and contributions including, but not limited to, maintenance, bug fixes, new releases, or updates, to this project.  
+Intel no longer accepts patches to this project.
+
 ## Enhancing Security at the Edge with Intel® SGX
 
 [Intel® SGX Overview and Gramine Enabling Blog Post](https://community.intel.com/t5/Blogs/Products-and-Solutions/Security/Enhancing-Security-at-the-Edge-Intel-Software-Guard-Extensions/post/1563391)
